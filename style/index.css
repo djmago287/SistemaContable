@@ -1,0 +1,91 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/*variables del root*/
+:root{
+    --color_primario:white;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
+    background-color: blue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--color_primario);
+    
+}
+.header h1{
+    text-align: center;
+}
+.formingresos{
+    border: 2px solid blue;
+    height: auto;
+    display: grid;
+    grid-auto-rows: 2rem;
+    grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+}
+.boxtable{
+    background-color: rgba(171, 177, 177, 0.247);
+    display: flex;
+    justify-content: center;
+
+}
+.boxtable table{
+    margin-top: 10px;
+    width: 80%;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid blue;
+}
+.boxtable table .table_encabezado{
+    background: linear-gradient(90deg, rgba(17,144,226,1) 0%, rgba(53,66,162,1) 100%);
+    color: white;
+    font-size: 1.2rem;
+    height: 40px;
+}
+.boxtable table .table_encabezado th:first-child{
+    width: 10%;
+    
+}
+.boxtable table .table_encabezado th:nth-child(2n){
+    width: 10%;
+}
+.boxtable table .table_encabezado th:nth-child(3n) {
+    width: 40%;
+}
+.boxtable table .table_encabezado th:nth-child(4n){
+    width: 40%;
+}
+
+.boxtable table .table_contenido{
+    background-color: rgba(177, 168, 168, 0.705);
+    height: 25px;
+}
+.boxtable table .table_contenido td{
+   height: 20px;
+}
+.boxtable table .table_contenido td:nth-child(3n){
+    display: flex;
+    flex-direction: row;
+}
+.boxtable table .table_contenido td:nth-child(3n) section{
+    width: 10rem;
+    height: 5rem;
+    border: 2px solid rgb(70, 70, 165);
+    background-color: white;
+    color: black;
+    display: none;
+    transform: translate(10px ,20px);
+}
+.boxtable table .table_contenido td:nth-child(3n):active section {   
+    display: flex;
+}
+.boxtable table .table_contenido:hover{
+    background-color: blue;
+    color: white;
+}
