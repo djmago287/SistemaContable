@@ -32,7 +32,7 @@
                         <td>
                             <?php echo $obj['DescripcionTransaccion']?>
                             <section >
-                                <p>Esto es el popovers</p>
+                                <p>Esto es el popovers adsasdsada como todas las cosas</p>
                             </section>
                         </td>
                         <td ><?php echo $obj['ValorTransaccion']?></td>

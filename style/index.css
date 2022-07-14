@@ -20,6 +20,7 @@
 .header h1{
     text-align: center;
 }
+
 .formingresos{
     border: 2px solid blue;
     height: auto;
@@ -67,20 +68,23 @@
     height: 25px;
 }
 .boxtable table .table_contenido td{
-   height: 20px;
+   height: auto;
 }
 .boxtable table .table_contenido td:nth-child(3n){
     display: flex;
     flex-direction: row;
 }
 .boxtable table .table_contenido td:nth-child(3n) section{
-    width: 10rem;
-    height: 5rem;
+    width: 15rem;
+    height: 10rem;
     border: 2px solid rgb(70, 70, 165);
     background-color: white;
     color: black;
     display: none;
     transform: translate(10px ,20px);
+}
+.boxtable table .table_contenido td:nth-child(3n):active{
+   height: 20px;
 }
 .boxtable table .table_contenido td:nth-child(3n):active section {   
     display: flex;

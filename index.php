@@ -43,18 +43,20 @@
             echo $_SESSION['user'];
         ?>
     </header>
-    <nav class="formingresos">
-        <select class="col subtipo" id="txtsubtipo" >
-  
-        </select>
-        <input class="col" type="number" id="txtvalor" placeholder="Valor $ 0.00"/>
-        <textarea class="col" id="txtdescripcion"></textarea>
-        <button 
-            class="col"
-            onclick=setTransaccion()
-        >
-            Ingresar
-        </button>
+    <nav class="nav">
+        <div class="formingresos">
+            <select class="col subtipo" id="txtsubtipo" >
+            </select>
+            <input class="col" type="number" id="txtvalor" placeholder="Valor $ 0.00"/>
+            <textarea class="col" id="txtdescripcion"></textarea>
+            <button 
+                class="col"
+                onclick=setTransaccion()
+            >
+                Ingresar
+            </button>
+        </div>
+        
     </nav>
     <!--la tabla de las transacciones-->
     <section class="boxtable">
