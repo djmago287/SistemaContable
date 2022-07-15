@@ -31,10 +31,20 @@
     padding: 1rem;
     justify-content: center;
 }
+.boxgrafica{
+    display: flex; flex-direction: row;
+    justify-content: center;
+}
+.grafica{
+    width: 25%;
+    border: 2px solid black;
+    margin: 5px;
+}
 .boxtable{
     background-color: rgba(171, 177, 177, 0.247);
     display: flex;
     justify-content: center;
+    flex-direction: column
 
 }
 .boxtable table{
@@ -57,10 +67,13 @@
     width: 10%;
 }
 .boxtable table .table_encabezado th:nth-child(3n) {
-    width: 40%;
+    width: 50%;
 }
 .boxtable table .table_encabezado th:nth-child(4n){
-    width: 40%;
+    width: 15%;
+}
+.boxtable table .table_encabezado th:nth-child(5n){
+    width: 15%;
 }
 
 .boxtable table .table_contenido{

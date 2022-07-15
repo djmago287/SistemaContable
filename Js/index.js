@@ -1,7 +1,7 @@
 function escojer_tipo(tipo)
 {
     console.log(tipo);
-   setajax('./View/View_table.php?idtipo='+tipo,'.boxtable')
+    setajax('./View/View_subtipo.php?idtipo='+tipo,'.subtipo')
 }
 
 function setTransaccion()

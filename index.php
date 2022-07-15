@@ -21,17 +21,19 @@
         <h1>SISTEMA CONTABLE CENEPSI</h1>
         <?php
             //obtener los tipos como lo que es ingresos y gastos
+            include('Controller/Conexion.php');
             include('Controller/Con_tipo.php');
             $con_tipo = new Con_tipo();
             $Array_tipo = $con_tipo->getTipo();
-            while($obj = $Array_tipo->fetch())
+
+            for($i=0;$i<count($Array_tipo);$i++)
             {
                 ?>
                 <button 
-                    class="btntipo" 
-                    onclick=escojer_tipo(<?php echo $obj["IdTipo"]?>) 
+                    class="boxtipo" 
+                    onclick=escojer_tipo(<?php echo $Array_tipo[$i]["IdTipo"]?>) 
                 >
-                    <?php echo $obj["NameTipo"]?>
+                    <?php echo  $Array_tipo[$i]["NameTipo"]?>
                 </button>
                 <?php
             }
@@ -43,21 +45,20 @@
             echo $_SESSION['user'];
         ?>
     </header>
-    <nav class="nav">
-        <div class="formingresos">
-            <select class="col subtipo" id="txtsubtipo" >
-            </select>
-            <input class="col" type="number" id="txtvalor" placeholder="Valor $ 0.00"/>
-            <textarea class="col" id="txtdescripcion"></textarea>
-            <button 
-                class="col"
-                onclick=setTransaccion()
-            >
-                Ingresar
-            </button>
-        </div>
-        
-    </nav>
+    <form class="formingresos">
+        <select class="col subtipo" id="txtsubtipo" >
+        </select>
+        <textarea class="col" id="txtdescripcion"></textarea>
+        <input class="col" type="number" id="txtvalor" placeholder="Valor $ 0.00"/>
+        <input
+            type="submit"
+            class="col"
+            onclick=setTransaccion()
+            value="Ingresar"
+        />
+    </form>
+    <!-- las graficas-->
+    <?php include('View/View_graficas.php')?>
     <!--la tabla de las transacciones-->
     <section class="boxtable">
     </section>

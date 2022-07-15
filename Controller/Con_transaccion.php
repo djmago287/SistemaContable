@@ -3,24 +3,28 @@ class Con_transaccion{
     private $dbconn;
     function __construct()
     {
-        include "conexion.php";
+
         $this->dbconn= new Conectar();
     }
     function gettransaccion()
     {
+        $arrayTransacciones=[];
         $sql = $this->dbconn->connect()->prepare("select * from transaccion");
         $sql->execute();
         $sql->setFetchMode(PDO::FETCH_ASSOC);
-        return $sql;
+        while ($obj = $sql->fetch()) {
+            $arrayTransacciones[]=$obj;
+        }
+        return $arrayTransacciones;
         exit();
     }
-    function settransaccion($descripciontransacion, $ValorTransaccion, $IdUsuario,$IdUbicacion,$IdSubtipo,$FechaTransaccion)
+    function settransaccion($descripciontransacion, $ValorTransaccion, $IdUsuario,$IdSubtipo,$FechaTransaccion)
     {
-        $sql = $this->dbconn->connect()->prepare("INSERT INTO transaccion(DescripcionTransaccion,ValorTransaccion,IdUsuario,IdUbicacion,IdSubtipo,FechaTransaccion) values('$descripciontransacion','50.20',1,1,6,'10/02/2022')");
+        $sql = $this->dbconn->connect()->prepare("INSERT INTO transaccion(DescripcionTransaccion,ValorTransaccion,IdUsuario,IdSubtipo,FechaTransaccion) values('$descripciontransacion','$ValorTransaccion','$IdUsuario','$IdSubtipo','$FechaTransaccion')");
         $sql->execute();
         exit();
-
     }
+    
 }
 
 ?>

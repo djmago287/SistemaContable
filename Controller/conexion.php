@@ -31,4 +31,5 @@
             }
         }
     }
+    $conexion =  new Conectar();
 ?>
